@@ -283,7 +283,7 @@ async def register_user(chat_id, context: CallbackContext):
             await send_user_info(chat_id, context)
             await context.bot.send_message(
                 chat_id=chat_id,
-                text="<b>You have successfully registered\nSend URL to hunt gateway\n\nCredits left: 10</b>")
+                text="You have successfully registered\nSend URL to hunt gateway\n\nCredits left: 10")
     except Exception as e:
         logger.error(f"Error in register_user: {str(e)}")
         await context.bot.send_message(chat_id=chat_id, text="An error occurred during registration.")
