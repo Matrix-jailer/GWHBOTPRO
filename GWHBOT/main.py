@@ -70,7 +70,7 @@ USER_AGENTS = [
 ]
 
 # Telegram Bot Configurations
-TOKEN = '7162917997:AAGbtTxii0k6x4-RtwHDkU0XEd9wc35xf-c'
+TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_KEY = "Honda125786"
 SPECIAL_KEY = "Honda125786"
 PRIVATE_CHANNEL_ID = "@f2m3mm2euiaooplneh3eudj"
