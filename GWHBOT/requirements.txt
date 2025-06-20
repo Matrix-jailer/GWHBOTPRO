@@ -1,0 +1,5 @@
+tldextract
+beautifulsoup4
+cloudscraper
+requests
+python-telegram-bot==20.0
