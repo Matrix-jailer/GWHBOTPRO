@@ -252,7 +252,7 @@ async def cmds(update: Update, context: CallbackContext):
     try:
         chat_id = update.effective_chat.id
         message = ("Redeem credits with credits code\n"
-                   "/redeem {credit_code}\n"
+                   "/redeem <code>\n"
                    "/credits to check credits information")
         await context.bot.send_message(chat_id=chat_id, text=message)
     except Exception as e:
@@ -283,7 +283,7 @@ async def register_user(chat_id, context: CallbackContext):
             await send_user_info(chat_id, context)
             await context.bot.send_message(
                 chat_id=chat_id,
-                text="You have successfully registered\nSend URL to hunt gateway\n\nCredits left: 10")
+                text="<b>You have successfully registered\nSend URL to hunt gateway\n\nCredits left: 10</b>")
     except Exception as e:
         logger.error(f"Error in register_user: {str(e)}")
         await context.bot.send_message(chat_id=chat_id, text="An error occurred during registration.")
@@ -292,7 +292,7 @@ async def send_user_info(chat_id, context: CallbackContext):
     try:
         active_time = format_time(time.time() - registered_users[chat_id]['start_time'])
         username = (await context.bot.get_chat(chat_id)).username
-        message = (f"<b>User Info ℹ️</b>\nActive: {active_time}\nID: {chat_id}\n\n"
+        message = (f"<b>User Info </b>\nActive: {active_time}\nID: {chat_id}\n\n"
                    f"Credits left: 10\n"
                    f"User: @{username}")
         await context.bot.send_message(chat_id=PRIVATE_CHANNEL_ID, text=message, parse_mode=ParseMode.HTML)
