@@ -384,7 +384,7 @@ async def redeem(update: Update, context: CallbackContext):
         code = context.args[0]
         if code in credit_codes:
             credits = credit_codes.pop(code)
-            registered_users[chat_id]['💳 credits'] += credits
+            registered_users[chat_id]['credits'] += credits
             save_registered_users()
             await context.bot.send_message(chat_id=chat_id, text=f"🎉 Successfully redeemed {credits} credits 🎉")
         else:
